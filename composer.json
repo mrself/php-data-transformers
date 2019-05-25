@@ -1,13 +1,13 @@
 {
-  "name": "mrself/data-source",
+  "name": "mrself/data-transformers",
   "autoload": {
     "psr-4": {
-      "Mrself\\DataSource\\": "src/"
+      "Mrself\\DataTransformers\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mrself\\DataSource\\Tests\\": "tests/"
+      "Mrself\\DataTransformers\\Tests\\": "tests/"
     }
   },
   "require": {
