@@ -18,7 +18,11 @@ class Transformers
     public function applyTransformer($value, $transformer)
     {
         if (is_string($transformer)) {
-            $transformer = StringFactory::make(['source' => $transformer])->run();
+            $transformers = StringFactory::make(['source' => $transformer])->run();
+            return $this->applyTransformers($value, $transformers);
+        }
+
+        if (is_array($transformer)) {
             $arguments = array_merge([$value], $transformer['arguments']);
             return call_user_func_array([$this, $transformer['method']], $arguments);
         }

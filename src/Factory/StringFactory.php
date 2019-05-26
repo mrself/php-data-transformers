@@ -17,21 +17,32 @@ class StringFactory
 
     public function run()
     {
-        if ($this->isFunction()) {
-            return $this->parseFunction();
+        $parts = explode('|', $this->source);
+        return $this->processParts($parts);
+    }
+
+    protected function processParts(array $parts)
+    {
+        return array_map([$this, 'processPart'], $parts);
+    }
+
+    protected function processPart(string $part)
+    {
+        if ($this->isFunction($part)) {
+            return $this->parseFunction($part);
         }
 
         return [
-            'method' => $this->source,
+            'method' => $part,
             'arguments' => []
         ];
     }
 
-    protected function parseFunction()
+    protected function parseFunction($source)
     {
-        preg_match('/([^\(]*)\(([^\)]*)\)/', $this->source, $matches);
+        preg_match('/([^\(]*)\(([^\)]*)\)/', $source, $matches);
         if (count($matches) !== 3) {
-            throw InvalidFunctionException($this->source);
+            throw InvalidFunctionException($source);
         }
 
         return [
@@ -40,8 +51,8 @@ class StringFactory
         ];
     }
 
-    protected function isFunction()
+    protected function isFunction($source)
     {
-        return mb_strpos($this->source, '(') !== false;
+        return mb_strpos($source, '(') !== false;
     }
 }

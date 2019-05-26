@@ -18,4 +18,10 @@ class ApplyTransformerTest extends TestCase
         $result = (new Transformers())->applyTransformer('$1', 'skip($)');
         $this->assertEquals('1', $result);
     }
+
+    public function testItWorksWithStringMultipleTransformers()
+    {
+        $result = (new Transformers())->applyTransformer([1,2], 'first|string');
+        $this->assertEquals('1', $result);
+    }
 }
