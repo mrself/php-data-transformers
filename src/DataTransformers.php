@@ -52,6 +52,7 @@ class DataTransformers
      * @param array $transformer
      * @return mixed
      * @throws AbsentTransformerException
+     * @throws ApplyTransformerException
      */
     protected function applyTransformerByArray($value, array $transformer)
     {
@@ -61,7 +62,11 @@ class DataTransformers
             throw new AbsentTransformerException($object, $transformer, $value);
         }
 
-        return call_user_func_array([$object, $transformer['method']], $arguments);
+        try {
+            return call_user_func_array([$object, $transformer['method']], $arguments);
+        } catch (\Exception $e) {
+            throw new ApplyTransformerException($object, $value, $transformer);
+        }
     }
 
     protected function defineTransformerObject($value)
