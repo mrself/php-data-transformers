@@ -7,9 +7,12 @@ use Mrself\DataTransformers\Transformers\ArrayTransformers;
 use Mrself\DataTransformers\Transformers\ObjectTransformers;
 use Mrself\DataTransformers\Transformers\PrimitiveTransformers;
 use Mrself\DataTransformers\Transformers\ResourceTransformers;
+use Mrself\Options\WithOptionsTrait;
 
 class DataTransformers
 {
+    use WithOptionsTrait;
+
     /**
      * @var array
      */
