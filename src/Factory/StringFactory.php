@@ -45,10 +45,22 @@ class StringFactory
             throw InvalidFunctionException($source);
         }
 
+        $arguments = explode(',', $matches[2]);
+        $arguments = array_map([$this, 'parseArgument'], $arguments);
         return [
             'method' => $matches[1],
-            'arguments' => explode(',', $matches[2])
+            'arguments' => $arguments
         ];
+    }
+
+    protected function parseArgument(string $argument)
+    {
+        if (mb_strpos($argument, ':')) {
+            $parts = explode(':', $argument);
+            return [$parts[0] => $parts[1]];
+        }
+
+        return $argument;
     }
 
     protected function isFunction($source)

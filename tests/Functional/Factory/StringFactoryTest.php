@@ -11,13 +11,20 @@ class StringFactoryTest extends TestCase
     {
         $result = StringFactory::make(['source' => 'make'])->run();
         $expected = ['method' => 'make', 'arguments' => []];
-        $this->assertEquals($expected, $result);
+        $this->assertEquals($expected, $result[0]);
     }
 
     public function testItReturnsMethodWithArguments()
     {
         $result = StringFactory::make(['source' => 'make(1,2)'])->run();
         $expected = ['method' => 'make', 'arguments' => ['1','2']];
-        $this->assertEquals($expected, $result);
+        $this->assertEquals($expected, $result[0]);
+    }
+
+    public function testItParsesArray()
+    {
+        $result = StringFactory::make(['source' => 'make(1:2)'])->run();
+        $expected = ['method' => 'make', 'arguments' => [['1' => '2']]];
+        $this->assertEquals($expected, $result[0]);
     }
 }
