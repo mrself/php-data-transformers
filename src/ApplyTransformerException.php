@@ -27,7 +27,7 @@ class ApplyTransformerException extends DataTransformersException
         $this->value = $value;
         $this->transformer = $transformer;
 
-        parent::__construct('Error while applying transformer ' . $transformer['method' . ' from the object ' . get_class($object));
+        parent::__construct('Error while applying transformer ' . $transformer['method'] . ' from the object ' . get_class($object));
     }
 
     /**
