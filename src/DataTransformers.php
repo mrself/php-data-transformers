@@ -11,12 +11,15 @@ use Mrself\Options\WithOptionsTrait;
 
 class DataTransformers
 {
-    use WithOptionsTrait;
-
     /**
      * @var array
      */
     protected $transformers = [];
+
+    public static function make()
+    {
+        return new static();
+    }
 
     public function applyTransformers($value, $transformers)
     {

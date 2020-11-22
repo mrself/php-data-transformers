@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f750a516a2d585e17aa677226b6409ce",
+    "content-hash": "4421250fbb26df8a0efac9716942ed90",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -219,20 +219,20 @@
         },
         {
             "name": "mrself/container",
-            "version": "v1.11.1",
+            "version": "v1.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrself/php-container.git",
-                "reference": "e4d657b20ec982c46de7853ada67239f3a43fa4d"
+                "reference": "1df51aa46a2ccb8a8f1b6fef2b139216ece273ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrself/php-container/zipball/e4d657b20ec982c46de7853ada67239f3a43fa4d",
-                "reference": "e4d657b20ec982c46de7853ada67239f3a43fa4d",
+                "url": "https://api.github.com/repos/mrself/php-container/zipball/1df51aa46a2ccb8a8f1b6fef2b139216ece273ed",
+                "reference": "1df51aa46a2ccb8a8f1b6fef2b139216ece273ed",
                 "shasum": ""
             },
             "require": {
-                "mrself/options": "2.19.2",
+                "mrself/options": "*",
                 "php": "^7.2"
             },
             "require-dev": {
@@ -248,28 +248,28 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/mrself/php-container/issues",
-                "source": "https://github.com/mrself/php-container/tree/v1.11.1"
+                "source": "https://github.com/mrself/php-container/tree/v1.13.2"
             },
-            "time": "2020-11-17T17:42:42+00:00"
+            "time": "2020-11-22T21:46:15+00:00"
         },
         {
             "name": "mrself/options",
-            "version": "v2.19.2",
+            "version": "v2.19.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrself/php-options.git",
-                "reference": "c82ca25131854ea0c478799d19546790d1c52b0c"
+                "reference": "aee69443ba2a5de8315f3a3b9dd72e225475406b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mrself/php-options/zipball/c82ca25131854ea0c478799d19546790d1c52b0c",
-                "reference": "c82ca25131854ea0c478799d19546790d1c52b0c",
+                "url": "https://api.github.com/repos/mrself/php-options/zipball/aee69443ba2a5de8315f3a3b9dd72e225475406b",
+                "reference": "aee69443ba2a5de8315f3a3b9dd72e225475406b",
                 "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "^1.6",
                 "ext-memcached": "*",
-                "mrself/container": "*",
+                "mrself/container": "^1.13.2",
                 "mrself/util": "^1.5.0",
                 "php-di/phpdoc-reader": "^2.1",
                 "symfony/options-resolver": "^4.4"
@@ -288,9 +288,9 @@
             "notification-url": "https://packagist.org/downloads/",
             "support": {
                 "issues": "https://github.com/mrself/php-options/issues",
-                "source": "https://github.com/mrself/php-options/tree/v2.19.2"
+                "source": "https://github.com/mrself/php-options/tree/v2.19.5"
             },
-            "time": "2020-11-17T17:27:24+00:00"
+            "time": "2020-11-22T21:49:18+00:00"
         },
         {
             "name": "mrself/util",
